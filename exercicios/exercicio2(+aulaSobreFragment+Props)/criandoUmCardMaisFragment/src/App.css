@@ -1,0 +1,8 @@
+* {
+  background-color: grey;
+  box-sizing: border-box;
+}
+
+.borderDark {
+  border: 10px solid black;
+}

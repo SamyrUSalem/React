@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  background-color: aqua;
+  display: grid;
+  place-content: center;
+  /*Estou dizendo que a altura minima dele é a altura da pasta*/
+  min-height: 100vh;
+}

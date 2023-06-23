@@ -1,0 +1,19 @@
+.profile {
+    display: flex;
+    background: linear-gradient(to left top, rgb(73, 73, 182), rgb(95, 88, 88));
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+}
+
+.profile img {
+    width: 75px;
+}
+
+btn {
+    width: 30%;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <style>
+        #app {
+            background-color: gray;
+            text-align: center;
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!--O principal objetivo do React é ficar redenrizando as aplicações na tela-->
+    <div id="app"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const { createElement } = React
+        const app = document.getElementById("app")
+        //O React precisa de um elemento pai para poder trabalhar, ele vai fazer as configurações apenas dentro desse elemento, o ReactDOM esta falando q o app é esse elemento
+        const root = ReactDOM.createRoot(app)
+        //A maneira abaixo é a menos recomendada para usar o react
+
+        //Estou criando um elemento, primeiro eu coloco o nome desse elemento e depois os atributos q ele vai ter no caso são nenhum e após isso os filhos desse elemento ou o conteúdo q ele vai ter
+        const h1 = createElement("h1", {}, "Teste")
+        const p = createElement("p", {}, "Estou realizando um teste")
+        //Estou dizendo q o h1 e o p sãp filhos do main
+        const main = createElement("main", {}, h1, p)
+
+        //Estou dizendo para o root renderizar o main, então ele vai ficar atualizando esse elemento conforme necessário
+        root.render(main)
+    </script>
+</body>
+
+</html>

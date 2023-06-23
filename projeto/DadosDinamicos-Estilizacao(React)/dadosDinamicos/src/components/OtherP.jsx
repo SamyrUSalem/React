@@ -1,0 +1,1 @@
+export const OtherP = () => <p>Estou sendo criado a partir de uma arrow function</p>
