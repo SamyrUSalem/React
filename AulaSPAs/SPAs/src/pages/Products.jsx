@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import products from "../database.json"
 
@@ -14,12 +15,15 @@ export default function Products() {
                         <li key={product.id}>
                             <h4>{product.name}</h4>
                             <p>R$ {product.price}</p>
-                            <button>Ver</button>
+                            {/*Dessa forma, o button estará redirecionado o usuário para a página do produto de acordo com o Id, o parâmetro criado no doc router.jsx para a page products, estará coletando esse id, por conta da rota fornecida */}
+                            <Link to={`/products/${product.id}`}>
+                                <button>Ver</button>
+                            </Link>
                             <button>Compras</button>
                         </li>
                     ))}
                 </ul>
             </section>
-        </section>
+        </section >
     )
 }

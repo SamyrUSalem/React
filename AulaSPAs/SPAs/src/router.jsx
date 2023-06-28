@@ -6,6 +6,9 @@ import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Admin from "./pages/admin/Admin";
 import Layout from "./pages/Layout";
+import Product from "./pages/product";
+import loaderProduct from "./loaders/product";
+import ProductBoundary from "./error-boundaries/ProductBoundary";
 
 //Essa função simulará o comportamento de um navegador, como o rastreamento de histórico de navegação, o primeiro parâmetro dessa função seria um array de objetos com os caminhos q o usuário pode seguir
 const router = createBrowserRouter([
@@ -21,6 +24,12 @@ const router = createBrowserRouter([
             }, {
                 path: "products",
                 element: <Products />
+            }, {//Usando os ":" + algumNome, será criado um parâmentro com ele será possível tornar essa rota dinâmica, esse parâmetro "productId" esta coletando o Id q esta sendo fornecido no doc Products.jsx
+                path: "products/:productId",
+                element: <Product />,
+                //Dessa maneira, essa rota vai saber q essa função tem os dados necessários para fazê-la funcionar, esse é o objetivo do loader
+                loader: loaderProduct,
+                errorElement: <ProductBoundary />
             }, {
                 path: "cart",
                 element: <Cart />
